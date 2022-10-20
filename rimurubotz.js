@@ -40,7 +40,6 @@ const isGroup = nay.key.remoteJid.endsWith('@g.us');
 const from = nay.key.remoteJid;
 const content = JSON.stringify(nay.message);
 const args = body.trim().split(/ +/).slice(1);
-const hx = require('hxz-api');
 const q = args.join(" ");
 const botNumber = rimurubotz.user.id.split(':')[0] + '@s.whatsapp.net';
 const botName = rimurubotz.user.name;
