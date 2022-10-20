@@ -1,1 +1,1 @@
-worker: yarn add node index.js --session 'session.json'
+worker: node index.js --session 'session.json'
