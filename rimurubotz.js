@@ -724,19 +724,6 @@ var nyz = await api.search.carigrup(q)
 reply(await getResult("[ *SEARCH-GRUP* ]", ["Nama","Url"],
 [nyz.result[0].nama, nyz.result[0].link]))
 break
-case 'chara': case 'anime':  
-if (cekUser("id", sender) == null) return Notdaftar()
-if (!q) return reply("Masukkan nama karakter anime")
-reply("[❗] SEDANG DIPROSES")
-hx.chara(q).then(result => {
-const x4 = []
-Object.keys(result).forEach((i) => {  
-x4.push(result[i])
-})
-const x5 = x4[Math.floor(Math.random() * (x4.length))]
-nayla.sendMessage(from, {image:{url:x5}, caption:"🤯", mentions:[sender]},{quoted:nay1})
-});
-break
 case 'kusonime':
 if (cekUser("id", sender) == null) return Notdaftar()
 if (!q) return reply("Masukkan nama anime")
