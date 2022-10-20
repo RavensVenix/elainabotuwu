@@ -928,7 +928,7 @@ reply(`school(); home(); eat(); games(); sleep(); repeat();`)
 if (budy == "halo" || budy == "Haloo" || budy == "haloo" || budy == "Halo" || budy == "Haii") {
 reply("haloo jugaa:3")
 }
-if (budy == "anjing" || budy == "kontol" || budy == "babi" || budy == "ngentod" || budy == "bangsat" || budy == "Anjing" || budy == "Kontol" || budy == "Babi" || budy == "Ngentod" || budy == "anjg" || budy == "anj" || budy == "goblok" || budy == "Goblok" || budy == "Tolol" || budy == "gblk" || budy == "bego" || budy == "kntl" || budy == "mmk" || budy == "Memek" || budy == "Memk") {
+if (budy == "asw" || budy == "asu" || budy == "pepek" || budy == "pepeq" || budy == "ajg" || budy == "anj" || budy == "ktl" || budy == "Kontol" || budy == "Ngentod" || budy == "anjing" || budy == "kontol" || budy == "babi" || budy == "ngentod" || budy == "bangsat" || budy == "Anjing" || budy == "Kontol" || budy == "Babi" || budy == "Ngentod" || budy == "anjg" || budy == "anj" || budy == "goblok" || budy == "Goblok" || budy == "Tolol" || budy == "gblk" || budy == "bego" || budy == "kntl" || budy == "mmk" || budy == "Memek" || budy == "Memk") {
 reply("Haloo kak, mohon untuk menjaga kesopanan nya yaa~. Bisa saja admin/member disini nanti marah. • ❣︎6xzy✞")
 }
 
