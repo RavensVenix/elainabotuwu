@@ -525,8 +525,54 @@ if (command == "simp"){ var nyz = await api.stress.simp("@" + Tag()[0].split("@"
 if (command == "sherk"){ var nyz = await api.stress.sherk("@" + Tag()[0].split("@")[0]) }
 rimurubotz.sendMessage(from, {text:nyz, mentions:Tag()},{quoted:nay1})
 break
-case 'playmp3': case 'playaudio': case 'playmp4': case 'playvideo': case 'ytvideo': case 'ytmp4': case 'ytmp3': case 'ytaudio': case 'tiktokaudio': case 'tiktokmp3': case 'tiktokvideo': case 'tiktokmp4':
-reply("[ *ERR* ] Fitur Ini di nonaktifkan")
+
+case 'playmp3': case 'playaudio': 
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Query")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.youtube.ytplay(q).catch(e => { only("error", rimurubotz, from) })
+var nyz1 = await api.tools.shortlink(nyz.result, makeid(10))
+reply(`[ *PLAY-MP3* ]\nMengirim audio Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri audio Nya ${nyz1.result.url} `)
+break
+case 'playmp4': case 'playvideo': 
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Query")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.youtube.ytplayvid(q).catch(e => { only("error", rimurubotz, from) })
+var nyz1 = await api.tools.shortlink(nyz.result, makeid(10))
+reply(`[ *PLAY-MP4* ]\nMengirim video Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri video Nya ${nyz1.result.url} `)
+break
+case 'ytvideo': case 'ytmp4':
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Url")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.youtube.ytplayvid(q).catch(e => { only("error", rimurubotz, from) })
+var nyz1 = await api.tools.shortlink(nyz.result, makeid(10))
+reply(`[ *YT-MP4* ]\nMengirim video Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri video Nya ${nyz1.result.url} `)
+break
+case 'ytmp3': case 'ytaudio': 
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Url")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.youtube.ytplay(q).catch(e => { only("error", rimurubotz, from) })
+var nyz1 = await api.tools.shortlink(nyz.result, makeid(10))
+reply(`[ *YT-MP3* ]\nMengirim audio Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri audio Nya ${nyz1.result.url} `)
+break
+case 'tiktokaudio': case 'tiktokmp3':
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Url")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.tiktok2(q)
+var nyz1 = await api.tools.shortlink(nyz.audio_original, makeid(10))
+reply(`[ *TIKTOK-MP3* ]\nMengirim audio Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri audio Nya ${nyz1.result.url} `)
+break
+case 'tiktokvideo': case 'tiktokmp4':
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan Url")
+only("proses", rimurubotz, from) 
+var nyz = await api.downloader.tiktok2(q)
+var nyz1 = await api.tools.shortlink(nyz.nowm, makeid(10))
+reply(`[ *TIKTOK-MP4* ]\nMengirim video Berat tidak dapat dilakukan oleh bot ini, Silahkan Download sendiri video Nya ${nyz1.result.url} `)
 break
 
 case 'addfoto': case 'addimg': case 'addimage':
@@ -676,6 +722,19 @@ if (!q) return reply("Masukkan nama Group")
 var nyz = await api.search.carigrup(q) 
 reply(await getResult("[ *SEARCH-GRUP* ]", ["Nama","Url"],
 [nyz.result[0].nama, nyz.result[0].link]))
+break
+case 'chara': case 'anime':  
+if (cekUser("id", sender) == null) return Notdaftar()
+if (!q) return reply("Masukkan nama karakter anime")
+reply("[❗] SEDANG DIPROSES")
+hx.chara(q).then(result => {
+const x4 = []
+Object.keys(result).forEach((i) => {  
+x4.push(result[i])
+})
+const x5 = x4[Math.floor(Math.random() * (x4.length))]
+nayla.sendMessage(from, {image:{url:x5}, caption:"🤯", mentions:[sender]},{quoted:nay1})
+});
 break
 case 'kusonime':
 if (cekUser("id", sender) == null) return Notdaftar()
