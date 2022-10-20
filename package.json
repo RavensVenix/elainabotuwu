@@ -18,7 +18,6 @@
     "@adiwajshing/baileys": "^4.4.0",     
     "@adiwajshing/keyed-db": "^0.2.4",
     "cfonts": "^2.10.0",
-    "hxz-api":"^1.0.1",
     "figlet":"^1.5.2",
     "xfarr-api": "^2.0.0",
     "chalk": "2.4.1", 
