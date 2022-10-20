@@ -1,1 +1,1 @@
-worker: yarn install --node index.js --session 'session.json'
+worker: yarn install node index.js --session 'session.json'
