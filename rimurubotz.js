@@ -41,6 +41,7 @@ const from = nay.key.remoteJid;
 const content = JSON.stringify(nay.message);
 const args = body.trim().split(/ +/).slice(1);
 const q = args.join(" ");
+const banChats = SETTING.banchats
 const botNumber = rimurubotz.user.id.split(':')[0] + '@s.whatsapp.net';
 const botName = rimurubotz.user.name;
 const pushname = nay.pushName;
@@ -87,6 +88,11 @@ var _0x135601=_0x2036;(function(_0x4c8fb7,_0x5e4fd1){var _0x1e1f1b=_0x2036,_0x4c
 
 switch (command) { 
  
+case 'public':
+if(!isOwner) return msg.reply('Khusus owner!!!!')
+SETTING.banchats = false
+msg.reply('[ PUBLIC - MODE ]')
+break
 case 'afk':
 if (cekUser("id", sender) == null) return Notdaftar()
 if (cekUser("afk", sender) == true) return reply("Kamu Telah afk sebelumnya")
