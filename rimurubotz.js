@@ -11,7 +11,7 @@ const ffmpeg = require('fluent-ffmpeg')
 const path = require("path")
 const { phone } = require("phone")
 const packagejson = JSON.parse(fs.readFileSync('./package.json')); 
-const { owner, namabot, namaowner, donasi, fakereply, ig, fb, tt} = require("./admin/config.json")
+const { SETTING, owner, namabot, namaowner, donasi, fakereply, ig, fb, tt} = require("./admin/config.json")
 const toMs = require('ms')
 const user = JSON.parse(fs.readFileSync('./lib/data.json')); 
 const { getBuffer, fetchJson, fetchText, getRandom, getGroupAdmins, runtime, sleep, makeid } = require("./lib/myfunc");
@@ -92,6 +92,11 @@ case 'public':
 if(!isOwner) return msg.reply('Khusus owner!!!!')
 SETTING.banchats = false
 msg.reply('[ PUBLIC - MODE ]')
+break
+case 'self':
+if(!isOwner) return msg.reply('Khusus owner!!!!')
+SETTING.banchats = true
+msg.reply('[ SELF - MODE ]')
 break
 case 'afk':
 if (cekUser("id", sender) == null) return Notdaftar()
